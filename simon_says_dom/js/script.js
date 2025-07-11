@@ -20,7 +20,7 @@ const NumeriRandom = (min , max ) => {
 
 
 let counterUno = 10;
-
+let counterDue = 20;
 let timer;
 
 const NumberRandomSelection = [];
@@ -74,10 +74,26 @@ const FirstInterval = setInterval (() => {
 }, 1000 );
 
 
-// button.addEventListener('click' , (e) => {
+button.addEventListener('click' , (e) => {
+  e.preventDefault();
+  const SecondInterval = setInterval (() => {
+
+    if (counterDue === 0) {
+      
+
+
+
+    }else {
+
+
+
+    }
+
+
+  } , 1000 );
 
 
 
 
 
-// })
+})
