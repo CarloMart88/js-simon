@@ -7,11 +7,10 @@ const answersForm = document.getElementById('answers-form')
 const inputGroup = document.getElementById('input-group')
 const message = document.getElementById('message')
 
-// const uno = document.getElementById('uno').value
-// const due = document.getElementById('due').value
-// const tre = document.getElementById('tre').value
-// const quattro = document.getElementById('quattro').value
-// const cinque = document.getElementById('cinque').value
+
+
+
+ 
 
 const button = document.getElementById('btn')
 
@@ -24,9 +23,33 @@ let counterUno = 10;
 
 let timer;
 
+const NumberRandomSelection = [];
 
 
-  numbersList.innerHTML = `<li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li>`
+
+
+
+
+numbersList.innerHTML =  `
+
+<li id= "uno">${NumeriRandom(1 , 50)}</li>
+<li id= "due">${NumeriRandom(1 , 50)}</li>
+<li id= "tre">${NumeriRandom(1 , 50)}</li>
+<li id= "quattro">${NumeriRandom(1 , 50)}</li>
+<li id= "cinque">${NumeriRandom(1 , 50)}</li>
+ `
+
+const uno = document.getElementById('uno').textContent
+const due = document.getElementById('due').textContent
+const tre = document.getElementById('tre').textContent
+const quattro = document.getElementById('quattro').textContent
+const cinque = document.getElementById('cinque').textContent
+
+NumberRandomSelection.push(uno , due , tre , quattro , cinque)
+
+ 
+console.log(NumberRandomSelection)
+
 
 const FirstInterval = setInterval (() => { 
 
@@ -37,12 +60,12 @@ const FirstInterval = setInterval (() => {
     answersForm.classList.remove(`d-none`)
     numbersList.classList.add(`d-none`)
 
+     
 
 
   }else {
     countDown.innerText = counterUno
   
-
     
   }
 
