@@ -15,11 +15,18 @@ const message = document.getElementById('message')
 
 const button = document.getElementById('btn')
 
-const NumeriRandom Math.floor(Math.random(1 , 50 ))
+// funzione numeri random 
+const NumeriRandom = (min , max ) => {
+  return Math.floor(Math.random() * (max - min * 1 )+ min)}
+
 
 let counterUno = 10;
 
 let timer;
+
+
+
+  numbersList.innerHTML = `<li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li> <li>${NumeriRandom(1 , 50)}</li>`
 
 const FirstInterval = setInterval (() => { 
 
@@ -28,10 +35,13 @@ const FirstInterval = setInterval (() => {
     instructions.classList.add(`d-none`)
     countDown.classList.add(`d-none`)
     answersForm.classList.remove(`d-none`)
+    numbersList.classList.add(`d-none`)
+
 
 
   }else {
     countDown.innerText = counterUno
+  
 
     
   }
