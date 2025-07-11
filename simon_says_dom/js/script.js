@@ -20,7 +20,7 @@ const NumeriRandom = (min , max ) => {
 
 
 let counterUno = 10;
-let counterDue = 20;
+let counterDue = 7;
 let timer;
 
 const NumberRandomSelection = [];
@@ -78,40 +78,69 @@ const FirstInterval = setInterval (() => {
 
 
 
-  countDown.classList.remove(`d-none`)
+
 
 button.addEventListener(`click` , function(e){
   e.preventDefault();  
 
-    const one = Number(document.getElementById('one').value)
-    const two = Number(document.getElementById('two').value)
-    const three = Number(document.getElementById('three').value)
-    const four = Number(document.getElementById('four').value)
-    const five = Number(document.getElementById('five').value)
+   const SecondInterval = setInterval (() => {
 
-    UserNumberChoice.push(one , two , three , four , five)
-   console.log(UserNumberChoice)
+    countDown.classList.remove('d-none');
+    
+
+    if (counterDue === 0) {
+      clearInterval(SecondInterval)
+
+      const one = Number(document.getElementById('one').value)
+      const two = Number(document.getElementById('two').value)
+      const three = Number(document.getElementById('three').value)
+      const four = Number(document.getElementById('four').value)
+      const five = Number(document.getElementById('five').value)
+
+      UserNumberChoice.push(one , two , three , four , five)
+      console.log(UserNumberChoice)
+
+
+      countDown.classList.add(`d-none`);
+
+      return UserNumberChoice
+
+      
+
+    }else {
+      
+      countDown.innerText = counterDue
+      
+
+    }
+
+    counterDue-- ;
+
+  } , 1000 );
 
 
 });
 
 
+const arrayFinal = [];
+
+for( let i = 0; i<NumberRandomSelection.length ; i++) {
+  for( let j = 0; j<UserNumberChoice.length ; j++) {
+
+    if(NumberRandomSelection[i] === UserNumberChoice[j]){
+      
+      message.innerText = `complimenti! hai indovinato tutti i nunmeri`
+
+    }else {
+
+      arrayFinal.push(UserNumberChoice[j])
+
+    }
+  
+}
+
+}
+
+   
 
  
-  //  const SecondInterval = setInterval (() => {
-
-  //   if (counterDue === 0) {
-  //     clearInterval(SecondInterval)
-
-
-
-
-  //   }else {
-  //     countDown.innerText = counterDue
-
-
-  //   }
-
-  //   counterDue-- ;
-
-  // } , 1000 );
