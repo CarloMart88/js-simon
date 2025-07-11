@@ -20,7 +20,7 @@ const NumeriRandom = (min , max ) => {
 
 
 let counterUno = 10;
-let counterDue = 7;
+let counterDue = 20;
 let timer;
 
 const NumberRandomSelection = [];
@@ -103,7 +103,27 @@ button.addEventListener(`click` , function(e){
 
       countDown.classList.add(`d-none`);
 
-      return UserNumberChoice
+   
+      let contatoreFinal = 0;
+
+      for( let i = 0; i<NumberRandomSelection.length ; i++) {
+      for( let j = 0; j<UserNumberChoice.length ; j++) {
+
+        if(NumberRandomSelection[i] === UserNumberChoice[j]){
+            contatoreFinal++
+
+                 } 
+  
+      }
+          }
+
+    if (contatoreFinal === 1) {
+        message.innerText = `Complimenti! Hai indovinato 1 numero`;
+        } else if (contatoreFinal > 1) {
+        message.innerText = `Complimenti! Hai indovinato ${contatoreFinal} numeri`;
+        } else {
+        message.innerText = `Peccato! Non hai indovinato nessun numero`;
+        }
 
       
 
@@ -121,25 +141,6 @@ button.addEventListener(`click` , function(e){
 
 });
 
-
-const arrayFinal = [];
-
-for( let i = 0; i<NumberRandomSelection.length ; i++) {
-  for( let j = 0; j<UserNumberChoice.length ; j++) {
-
-    if(NumberRandomSelection[i] === UserNumberChoice[j]){
-      
-      message.innerText = `complimenti! hai indovinato tutti i nunmeri`
-
-    }else {
-
-      arrayFinal.push(UserNumberChoice[j])
-
-    }
-  
-}
-
-}
 
    
 
